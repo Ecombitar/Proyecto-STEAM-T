@@ -32,7 +32,7 @@
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.75;
-            padding-bottom: 5rem;
+            padding-bottom: 2.5rem;
         }
 
         /* Encabezado Institucional */
@@ -429,6 +429,292 @@
             .navigation-bar { grid-template-columns: 1fr; }
             .document-page { padding: 2rem 1.5rem; }
         }
+
+        /* Presentación de página web de lectura continua */
+        html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+        :root {
+            --bg-main: #eef4f3;
+            --bg-container: #ffffff;
+            --red-formal: #0f766e;
+            --red-dark: #12343b;
+            --red-hover: #e05d44;
+            --red-light: #fff1ec;
+            --text-main: #173042;
+            --text-muted: #5d6f78;
+            --border-color: #d6e2df;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #eef4f3 0%, #f8fbfa 55%, #fff4ef 100%);
+            line-height: 1.65;
+        }
+
+        .academic-header {
+            max-width: none;
+            margin: 0;
+            padding: 5.5rem max(2rem, calc((100% - 1120px) / 2)) 4.5rem;
+            text-align: left;
+            border: 0;
+            border-radius: 0;
+            background: linear-gradient(120deg, #12343b 0%, #195b5c 62%, #e05d44 100%);
+            color: #ffffff;
+            box-shadow: none;
+        }
+
+        .academic-header::before {
+            content: 'PROYECTO STEAM+T · HISTORIA, PODER Y MEMORIA';
+            display: block;
+            margin-bottom: 1.25rem;
+            color: #a8e2d7;
+            font: 700 0.75rem/1.2 'Trebuchet MS', sans-serif;
+            letter-spacing: 0.16em;
+        }
+
+        .academic-header h1 {
+            max-width: 760px;
+            color: #ffffff;
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            font-weight: 700;
+            line-height: 0.98;
+            letter-spacing: -0.03em;
+            text-transform: none;
+        }
+
+        .academic-header {
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(120deg, rgba(18, 52, 59, 0.97), rgba(25, 91, 92, 0.84) 62%, rgba(224, 93, 68, 0.78)), url('https://upload.wikimedia.org/wikipedia/commons/8/86/Arbeit_Mach_Frei_gate_Auschwitz_2012.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .academic-meta {
+            justify-content: flex-start;
+            gap: 0.75rem 2rem;
+            color: #d5ebe7;
+            margin-top: 2rem;
+        }
+
+        .academic-meta span strong { color: #ffffff; }
+
+        .navigation-bar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            max-width: none;
+            margin: 0;
+            padding: 0.75rem max(1rem, calc((100% - 1120px) / 2));
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 8px 24px rgba(18, 52, 59, 0.08);
+        }
+
+        .nav-button {
+            flex: 0 0 auto;
+            padding: 0.65rem 0.9rem;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            background: transparent;
+            box-shadow: none;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .nav-button:hover,
+        .nav-button.active-page {
+            transform: none;
+            color: var(--red-dark);
+            background: #dff3ee;
+            border-color: #b7dfd6;
+            box-shadow: none;
+        }
+
+        .page-wrapper {
+            max-width: 1120px;
+            padding: 2rem 1rem 3rem;
+        }
+
+        .document-page,
+        .document-page.active-page {
+            display: block;
+            margin-bottom: 1.5rem;
+            padding: clamp(2rem, 5vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
+            border: 0;
+            border-top: 5px solid var(--red-formal);
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(18, 52, 59, 0.08);
+            scroll-margin-top: 5rem;
+            animation: none;
+        }
+
+        .document-page:nth-child(even) { border-top-color: var(--red-hover); }
+
+        h2 {
+            color: var(--red-dark);
+            font-size: clamp(1.7rem, 3vw, 2.7rem);
+            border-bottom: 0;
+            margin-bottom: 1.5rem;
+            text-transform: none;
+            letter-spacing: -0.02em;
+        }
+
+        h3 { color: var(--red-formal); margin-top: 2.25rem; }
+        p { text-align: left; }
+
+        .academic-summary-box { background: #f1f8f6; border-left-color: var(--red-formal); }
+        blockquote { background: linear-gradient(135deg, var(--red-light), #ffffff); }
+
+        .visual-context {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .visual-context figure {
+            position: relative;
+            min-height: 300px;
+            margin: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: var(--red-dark);
+            box-shadow: 0 12px 32px rgba(18, 52, 59, 0.14);
+        }
+
+        .visual-context img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+            opacity: 0.82;
+        }
+
+        .visual-context figcaption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 3.5rem 1.5rem 1.25rem;
+            color: #ffffff;
+            background: linear-gradient(transparent, rgba(18, 52, 59, 0.95));
+        }
+
+        .visual-context figcaption strong,
+        .visual-context figcaption span { display: block; }
+        .visual-context figcaption strong { font-size: 1.25rem; }
+        .visual-context figcaption span { margin-top: 0.25rem; color: #d5ebe7; font-size: 0.82rem; }
+
+        .site-footer {
+            padding: 4rem max(1.25rem, calc((100% - 1120px) / 2));
+            color: #d5ebe7;
+            background: #12343b;
+        }
+
+        .bibliography-modal .site-footer {
+            position: relative;
+            max-width: 900px;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-top: 5px solid var(--red-hover);
+            border-radius: 12px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            transform: translateY(2rem);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .bibliography-modal {
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+        }
+
+        .bibliography-modal.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transition-delay: 0s;
+        }
+
+        .bibliography-modal.is-open .site-footer { transform: translateY(0); }
+
+        .bibliography-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            border: 1px solid rgba(213, 235, 231, 0.35);
+            border-radius: 50%;
+            background: transparent;
+            color: #ffffff;
+            font-size: 1.35rem;
+            cursor: pointer;
+        }
+
+        .bibliography-close:hover { background: rgba(255, 255, 255, 0.12); }
+
+        .bibliography-tab {
+            position: fixed;
+            left: 1.5rem;
+            bottom: 0;
+            z-index: 30;
+            padding: 0.75rem 1.25rem 0.85rem;
+            border: 0;
+            border-top: 3px solid var(--red-hover);
+            border-radius: 10px 10px 0 0;
+            background: var(--red-dark);
+            color: #ffffff;
+            font: 700 0.8rem 'Trebuchet MS', sans-serif;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            box-shadow: 0 -5px 18px rgba(18, 52, 59, 0.16);
+        }
+
+        .bibliography-rail {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            left: 1.5rem;
+            z-index: 29;
+            height: 3px;
+            background: var(--red-hover);
+            border-top: 3px solid var(--red-hover);
+            pointer-events: none;
+        }
+
+        .bibliography-tab:hover { padding-bottom: 1.1rem; background: var(--red-formal); }
+
+        .site-footer h2 { color: #ffffff; }
+        .site-footer-intro { max-width: 620px; margin-bottom: 2rem; color: #b8d8d3; }
+        .site-footer .bibliography-list { columns: 2; column-gap: 3rem; }
+        .site-footer .bibliography-list li { break-inside: avoid; margin-left: 2.5rem; }
+        .site-footer .reference-link { color: #ffb09e; }
+        .footer-credit { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(213, 235, 231, 0.2); font-size: 0.8rem; color: #9fc4be; }
+
+        @media (max-width: 700px) {
+            .visual-context { grid-template-columns: 1fr; }
+            .site-footer .bibliography-list { columns: 1; }
+            .bibliography-modal .site-footer { max-height: 90vh; }
+            .bibliography-tab { left: 1rem; font-size: 0.72rem; }
+            .bibliography-rail { left: 1rem; }
+        }
+
+        @media (max-width: 600px) {
+            .academic-header { padding: 4rem 1.25rem 3rem; }
+            .academic-header h1 { font-size: 3rem; }
+            .page-wrapper { padding-top: 1rem; }
+            .navigation-bar { grid-template-columns: none; }
+        }
     </style>
 </head>
 <body>
@@ -443,23 +729,23 @@
         </div>
     </header>
 
-    <!-- Barra de Navegación -->
+    <!-- Navegación de una sola página -->
     <nav class="navigation-bar">
-        <div class="nav-button active-page" onclick="switchPage(1)">Delimitación</div>
-        <div class="nav-button" onclick="switchPage(2)">Antecedentes</div>
-        <div class="nav-button" onclick="switchPage(3)">Objetivos</div>
-        <div class="nav-button" onclick="switchPage(4)">Fichas Bib.</div>
-        <div class="nav-button" onclick="switchPage(5)">Marco Ref.</div>
-        <div class="nav-button" onclick="switchPage(6)">Metodología</div>
-        <div class="nav-button" onclick="switchPage(7)">Resultados y Análisis</div>
-        <div class="nav-button" onclick="switchPage(8)">Bibliografía</div>
+        <a class="nav-button active-page" href="#page-1">Delimitación</a>
+        <a class="nav-button" href="#page-2">Antecedentes</a>
+        <a class="nav-button" href="#page-3">Objetivos</a>
+        <a class="nav-button" href="#page-4">Fichas Bib.</a>
+        <a class="nav-button" href="#page-5">Marco Ref.</a>
+        <a class="nav-button" href="#page-6">Metodología</a>
+        <a class="nav-button" href="#page-7">Resultados</a>
+        <a class="nav-button" href="#bibliografia" onclick="openBibliography(event)">Bibliografía</a>
     </nav>
 
     <!-- Envoltura de Documentos -->
     <main class="page-wrapper">
 
         <!-- PAGINA 1: DELIMITACION -->
-        <div id="page-1" class="document-page active-page">
+        <section id="page-1" class="document-page active-page">
             <h2>Introducción y Delimitación del Proyecto</h2>
             
             <div class="academic-summary-box">
@@ -480,13 +766,32 @@
 
             <h3>Pregunta de Investigación</h3>
             <div class="question-callout">
-                <p>¿Cómo se normalizó la violencia en la sociedad de la Alemania nazi a través del poder político?</p>
+                <p>¿Cómo se normalizó la violencia en la sociedad de la Alemania nazi a través del poder político y que resonancia tuvo en el conflicto armado en Colombia?</p>
             </div>
-        </div>
+
+            <div class="visual-context" aria-label="Contextos históricos comparados">
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Adolf_Hitler%27s_speech_in_the_Reichstag%2C_30_January_1939.jpg" alt="Discurso político en el Reichstag durante la Alemania nazi" loading="lazy">
+                    <figcaption><strong>Alemania nazi</strong><span>Poder político, propaganda y burocratización de la violencia.</span></figcaption>
+                </figure>
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Collage_conflicto_interno_armado_en_Colombia.jpg" alt="Collage documental sobre el conflicto armado en Colombia" loading="lazy">
+                    <figcaption><strong>Conflicto armado en Colombia</strong><span>Memoria, desplazamiento y consecuencias sociales de la violencia.</span></figcaption>
+                </figure>
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Auschwitz_II_Birkenau.jpg" alt="Vista del campo de concentración de Auschwitz-Birkenau" loading="lazy">
+                    <figcaption><strong>La violencia sistemática</strong><span>Espacios, registros y estructuras que hicieron posible el exterminio.</span></figcaption>
+                </figure>
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/FARC_commanders_during_the_Caguan_peace_talks_%281998-2002%29.jpg" alt="Conversaciones de paz de El Caguán en Colombia" loading="lazy">
+                    <figcaption><strong>Memoria y negociación</strong><span>El conflicto colombiano visto desde sus actores y procesos de paz.</span></figcaption>
+                </figure>
+            </div>
+        </section>
 
 
         <!-- PAGINA 2: ANTECEDENTES -->
-        <div id="page-2" class="document-page">
+        <section id="page-2" class="document-page">
             <h2>Antecedentes de Investigación</h2>
             <p class="no-indent" style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;"> Haz clic sobre cualquiera de los 5 antecedente historiográficos e institucionales para expandirlos y leer la información completa</p>
             
@@ -532,11 +837,11 @@
                     <span class="card-hint">Hacer clic para ampliar →</span>
                 </div>
             </div>
-        </div>
+        </section>
 
 
         <!-- PAGINA 3: OBJETIVOS -->
-        <div id="page-3" class="document-page">
+        <section id="page-3" class="document-page">
             <h2>Objetivos y Categorías de Análisis</h2>
             
             <h3>Objetivo General</h3>
@@ -546,22 +851,21 @@
 
             <h3>Objetivos Específicos</h3>
             <ol style="margin-top: 1rem;">
-                <li>Explicar a través de un cortometraje cómo se desarrollaron las diferentes formas de violencia en la Alemania nazi y qué impacto tuvo a nivel local en lo político y lo social (Artes y tecnología).</li>
+                <li>Explicar mediante un cortometraje el desarrollo de las formas de violencia en la Alemania nazi y su impacto socio-político local, visibilizando las dinámicas de persecución e indiferencia colectiva. (Artes y tecnología).</li>
                 <li>Analizar por qué países con registros de población más sofisticados y centralizados tuvieron tasas de mortalidad más altas que aquellos con sistemas menos eficientes.</li>
-                <li>Estructurar la narrativa y el guion literario del cortometraje, utilizando técnicas de escritura dramática para retratar de manera verosímil la manipulación del lenguaje en la cotidianidad de la Alemania nazi.</li>
             </ol>
 
             <h3>Categorías de Análisis</h3>
             <ul>
                 <li>Violencia en la Alemania nazi</li>
-                <li>Influencia del poder político de la Alemania nazi</li>
+                <li>Influencia del poder político</li>
                 <li>Aceptación social de la violencia</li>
             </ul>
-        </div>
+        </section>
 
 
         <!-- PAGINA 4: FICHAS BIBLIOGRAFICAS -->
-        <div id="page-4" class="document-page">
+        <section id="page-4" class="document-page">
             <h2>Fichas Bibliográficas</h2>
             <p class="no-indent" style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Haz clic sobre cualquiera de las 12 fichas de lectura e investigación bibliográfica para desplegar el contenido íntegro registrado en la base de datos junto a sus enlaces oficiales.</p>
             
@@ -603,13 +907,13 @@
                     <div><span class="card-badge">Ficha 12 | Aceptación Social</span><h4>La mixofobia como política de Estado (II)</h4><p style="font-size: 0.8rem; color: var(--text-muted);">García, D. R. (2014)</p></div><span class="card-hint">Ampliar Ficha →</span>
                 </div>
             </div>
-        </div>
+        </section>
 
 
         <!-- PAGINA 5: MARCO REFERENCIAL (COMPACTO A 1/3 CON INTERACCIÓN MODAL) -->
-        <div id="page-5" class="document-page">
+        <section id="page-5" class="document-page">
             <h2>Marco Referencial</h2>
-            <p style="margin-bottom: 2rem;">El presente marco referencial busca contextualizar al lector y dar respuesta a la pregunta inicial, con información, conceptos y datos sobre cómo la transformación de la guerra, la aplicación del control legal y psicopolítico, y la respuesta psicológica colectiva permitieron el desarrollo de la violencia extrema en la Alemania nazi. A continuación, se presentarán cada una de las categorías definidas por los autores e instituciones, para tener un mayor entendimiento de estos conceptos:</p>
+            <p style="margin-bottom: 2rem;">El presente marco referencial busca dar respuesta a la pregunta inicial, con información, conceptos y datos sobre cómo la transformación de la guerra, la aplicación del control legal y psicopolítico, y la respuesta psicológica colectiva permitieron el desarrollo de la violencia extrema en la Alemania nazi. A continuación, se presentarán cada una de las categorías definidas por los autores e instituciones, para tener un mayor entendimiento de estos conceptos:</p>
             
             <p class="no-indent" style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Haz clic sobre cualquiera de las 3 categorías para abrir el marco referencial completo</p>
 
@@ -644,11 +948,11 @@
                     <span class="card-hint">Hacer clic para leer completo →</span>
                 </div>
             </div>
-        </div>
+        </section>
 
 
         <!-- PAGINA 6: METODOLOGIA -->
-        <div id="page-6" class="document-page">
+        <section id="page-6" class="document-page">
             <h2>6. Metodología</h2>
             <p class="no-indent" style="font-weight: bold; color: var(--red-formal); margin-bottom: 1rem; font-family: Arial, sans-serif; font-size: 1.1rem;">
                 Enfoque Metodológico: Mixto (Cualitativo / Cuantitativo)
@@ -662,10 +966,10 @@
                 <strong>Prototipo STEAM+T:</strong> Cortometraje audiovisual sobre deshumanización, poder político y aceptación social de la violencia.
             </div>
             <p>La investigación adopta un enfoque mixto (cualitativo y cuantitativo), el cual resulta perfecto para analizar completamente la normalización de la violencia en la Alemania nazi y la influencia del poder político, al articular la vivencia humana con el análisis de datos estructurales y estadísticos. En relación con este enfoque y para abordar las categorías de análisis (Violencia en la Alemania nazi, Influencia del poder político y Aceptación social de la violencia), se definieron dos técnicas de recolección: por un lado, las Historias de Vida, una técnica cualitativa dirigida al primer objetivo específico para examinar el impacto político y social de las formas de violencia a nivel local; y por otro lado, el Análisis Documental, técnica cualitativa y cuantitativa orientada al segundo objetivo específico para contrastar cómo la eficiencia y centralización de los registros de población  incrementaron las tasas de mortalidad frente a sistemas menos sofisticados. Como instrumentos de recolección, se utilizaron matrices de análisis (Matriz de Análisis de Historias de Vida y Matriz de Análisis Documental) que permitieron interpretar la información relevante. La población del estudio abarca a las víctimas del régimen nazi y el periodo (1933–1945), delimitando una muestra intencional conformada por cuatro testimonios de sobrevivientes del Holocausto (Paquita Sitzer, Albert Barbouth, Charlotte Günberg e Irene Sashar) y la serie documental "Hitler toma Oriente: Operación Barbarroja" (National Geographic / Disney+, 2022). Finalmente, como prototipo para evidenciar de forma tangible e interdisciplinar los resultados de la investigación, se desarrolla un cortometraje que sintetiza, mediante el lenguaje audiovisual y tecnológico, las dinámicas de deshumanización, el peso del poder político y los procesos de aceptación social de la violencia.</p>
-        </div>
+        </section>
 
         <!-- PAGINA 7: RESULTADOS -->
-        <div id="page-7" class="document-page">
+        <section id="page-7" class="document-page">
             <h2>7. Resultados y Análisis</h2>
             <p>La aplicación del enfoque mixto permitió sistematizar hallazgos sobre la persecución, la instrumentalización del poder político y la eficiencia técnica del régimen nazi. Haz clic en cada bloque para consultar la evidencia registrada.</p>
             <div class="interactive-grid">
@@ -686,12 +990,18 @@
                 <div class="clickable-card" onclick="openModal('analisis4')"><div><span class="card-badge">Artes y tecnología</span><h4>El cortometraje como prototipo</h4><p>El lenguaje audiovisual convierte los hallazgos en una experiencia pedagógica.</p></div><span class="card-hint">Leer análisis →</span></div>
                 <div class="clickable-card" onclick="openModal('analisis5')"><div><span class="card-badge">Colombia</span><h4>Transversalidad histórica</h4><p>Desplazamiento, estigmatización, burocracia e impunidad conectan ambos contextos.</p></div><span class="card-hint">Leer análisis →</span></div>
             </div>
-        </div>
+        </section>
 
-        <!-- PAGINA 8: BIBLIOGRAFIA -->
-        <div id="page-8" class="document-page">
-            <h2>8. Bibliografía</h2>
-            <p class="no-indent" style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Fuentes bibliográficas, audiovisuales y testimoniales utilizadas en la investigación.</p>
+    </main>
+
+    <div class="bibliography-rail" aria-hidden="true"></div>
+    <button class="bibliography-tab" type="button" onclick="openBibliography(event)">Bibliografía ↗</button>
+
+    <div id="bibliography-modal" class="modal-overlay bibliography-modal" onclick="closeBibliography()">
+        <footer id="bibliografia" class="site-footer" onclick="event.stopPropagation()">
+            <button class="bibliography-close" type="button" aria-label="Cerrar bibliografía" onclick="closeBibliography()">&times;</button>
+            <h2>Bibliografía</h2>
+            <p class="site-footer-intro">Fuentes bibliográficas, audiovisuales y testimoniales utilizadas para construir este proyecto.</p>
             <ol class="bibliography-list">
                 <li>García, D. R. (2014). <em>Revista de Demografía Histórica</em>.</li>
                 <li>Alvéstegui, A. (2016). <em>Cuadernos Judaicos</em>.</li>
@@ -711,9 +1021,9 @@
                 <li>Centro Sefarad-Israel. (2019, 17 de mayo). <em>Charlotte de Grünberg, superviviente del Holocausto</em> [Video]. YouTube. <a class="reference-link" href="https://www.youtube.com/watch?v=FkVQFIWs8x4" target="_blank" rel="noopener noreferrer">Ver video</a></li>
                 <li>Centro Sefarad-Israel. (2023, 1 de febrero). <em>Irene Shashar, superviviente del Holocausto</em> [Video]. YouTube. <a class="reference-link" href="https://www.youtube.com/watch?v=1Q3Ggy2rnAQ" target="_blank" rel="noopener noreferrer">Ver video</a></li>
             </ol>
-        </div>
-
-    </main>
+            <p class="footer-credit">Proyecto STEAM+T · Emiliano Cómbita Ramírez · Curso 10-C</p>
+        </footer>
+    </div>
 
     <!-- VENTANA FLOTANTE UNIVERSAL (MODAL) -->
     <div id="custom-modal" class="modal-overlay" onclick="closeModal()">
@@ -727,14 +1037,41 @@
 
     <!-- CONTROLADOR JAVASCRIPT Y BASE DE DATOS COMPLETA -->
     <script>
-        function switchPage(pageNumber) {
-            document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active-page'));
-            document.querySelectorAll('.document-page').forEach(page => page.classList.remove('active-page'));
-            
-            document.querySelectorAll('.nav-button')[pageNumber - 1].classList.add('active-page');
-            document.getElementById(`page-${pageNumber}`).classList.add('active-page');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function openBibliography(event) {
+            event.preventDefault();
+            document.getElementById('bibliography-modal').classList.add('is-open');
+            document.getElementById('bibliography-modal').setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
         }
+
+        function closeBibliography() {
+            document.getElementById('bibliography-modal').classList.remove('is-open');
+            document.getElementById('bibliography-modal').setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeBibliography();
+        });
+
+        function updateActiveNavigation() {
+            const sections = document.querySelectorAll('.document-page');
+            const links = document.querySelectorAll('.nav-button');
+            const marker = window.scrollY + 140;
+            let activeIndex = 0;
+
+            sections.forEach((section, index) => {
+                if (section.offsetTop <= marker) activeIndex = index;
+            });
+
+            links.forEach((link, index) => {
+                link.classList.toggle('active-page', index === activeIndex);
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavigation, { passive: true });
+        window.addEventListener('hashchange', updateActiveNavigation);
+        updateActiveNavigation();
 
         const modalDatabase = {
             ant1: {
